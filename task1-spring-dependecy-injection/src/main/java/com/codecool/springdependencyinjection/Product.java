@@ -1,7 +1,10 @@
 package com.codecool.springdependencyinjection;
 
+import org.springframework.stereotype.Component;
+
 import java.math.BigDecimal;
 import java.util.concurrent.atomic.AtomicInteger;
+
 
 public class Product {
 
