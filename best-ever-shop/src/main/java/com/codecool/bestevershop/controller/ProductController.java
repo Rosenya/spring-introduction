@@ -21,19 +21,19 @@ public class ProductController {
         return new ResponseEntity(product, HttpStatus.OK);
     }
 
-    @PostMapping("/products/addProduct")
+    @PostMapping("/products")
     public ResponseEntity addProduct(@RequestBody Product product){
         productService.addProduct(product);
         return ResponseEntity.ok(product);
     }
 
-    @PutMapping("/products/editProduct")
-    public ResponseEntity editProduct(@RequestBody Product product){
+    @PutMapping("/{id}")
+    public ResponseEntity editProduct(@RequestBody Product product, @PathVariable Long id){
         productService.editProduct(product);
         return ResponseEntity.ok(product);
     }
 
-    @DeleteMapping("/products/deleteProduct")
+    @DeleteMapping("/{id}")
     public ResponseEntity deleteProduct(@RequestParam("id") Long id){
         productService.deleteProductById(id);
         return ResponseEntity.ok(null);
